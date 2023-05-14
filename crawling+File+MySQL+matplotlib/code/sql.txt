@@ -1,0 +1,7 @@
+'''select w.region 地区,w.year 年份,w.value 人均水资源量（立方米）,
+    f.value 森林覆盖率,e.value 二氧化硫排放量（万吨）,g.value 城市绿化率
+    from water w,forest f,emit e,green g
+    where w.region=f.region and w.year=f.year
+    and w.region=e.region and w.year=e.year
+    and w.region=g.region and w.year=g.year;
+    '''
