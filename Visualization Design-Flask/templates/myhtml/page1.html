@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生态数据可视化大屏图1</title>
+    <link rel="stylesheet" href="../../static/assets/css/index.css" />
+      <script type="text/javascript" src="../../static/assets/js/vue.js"></script>
+    <script type="text/javascript" src="../../static/assets/js/axios.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>可视化大屏图-Flask,Vue,Pyechars</h1>
+      <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+    <section class="mainbox" id="app">
+      <div class="column">
+        <div class="panel bar">
+          <h2>
+            2021年分省人均水资源量
+          </h2>
+          <div class="chart" id="line"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>2021分省森林覆盖率</h2>
+          <div class="chart" id="bar"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>分省城市绿化率</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>2021年</li>
+            </ul>
+          </div>
+        </div>
+        <div class="map">
+          <div class="chart" id="rose"></div>
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel bar1">
+          <h2>2021分省二氧化硫排放量</h2>
+          <div class="chart" id="funnel"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line1">
+          <h2>2015-2021二氧化硫排放量分布</h2>
+          <div class="chart" id="boxplot"></div>
+          <div class="panel-footer"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="../../static/assets/js/flexible.js"></script>
+    <script src="../../static/assets/js/jquery.js"></script>
+    <script src="../../static/assets/js/echarts.min.js"></script>
+    <script src="../../static/assets/js/index.js"></script>
+    <script src="../../static/assets/js/china.js"></script>
+    <script src="../../static/assets/js/myMap.js"></script>
+
+  </body>
+
+</html>
